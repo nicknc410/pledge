@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
-const port = 3456;
+const port = process.env.PORT || 3456;
 const saltRounds = 10;
 const app = express();
 
