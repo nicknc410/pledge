@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
-const port = 3456;
+const port = process.env.PORT || 4000;
 const saltRounds = 10;
 const app = express();
 
@@ -24,7 +24,7 @@ async function connect() {
 connect();
 
 app.listen(port, () => {
-    console.log(`http://localhost:${port}`);
+    console.log(`Example app listening on port ${port}`)
 });
 app.use(bodyParser.json({ 'limit': '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
